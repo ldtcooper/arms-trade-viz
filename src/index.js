@@ -8,7 +8,9 @@ const map = new Datamap(
       defaultFill: '#FFFFFF'
     },
     geographyConfig: {
-      borderColor: '#666699'
+      borderColor: '#808080',
+      highlightFillColor: '#3399ff',
+      highlightBorderColor: "#003366"
     }
   }
 );
