@@ -1,0 +1,31 @@
+{
+  "name": "jsproject",
+  "version": "1.0.0",
+  "description": "## What is it? A visualization of part of the Stockholm International Peace Research Institute's (SIPRI) [Arms Transfer Database](https://www.sipri.org/databases/armstransfers), which keeps track of major (over one million dollars) transfers of conventional weapons between countries and non-state armed groups. Specifically, this visualization will examine flows of arms to and from the United States between 2001 and 2016, although this scope may expand if time allows (see Bonus Features at the end.)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ldtcooper/arms-trade-viz.git"
+  },
+  "keywords": [],
+  "author": "Logan Cooper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ldtcooper/arms-trade-viz/issues"
+  },
+  "homepage": "https://github.com/ldtcooper/arms-trade-viz#readme",
+  "dependencies": {
+    "datamaps": "^0.5.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.6.0"
+  }
+}
