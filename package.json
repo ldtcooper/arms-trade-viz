@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
