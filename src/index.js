@@ -32,7 +32,16 @@ const map = new Datamap(
   }
 );
 
+// map.arc(exportArcsGenerator(EXPORT_DATA));
+d3.selectAll('.datamaps-subunit')
+  .on('mouseover', function(d, i) {
+    map.arc([{origin: 'USA', destination: d.id, strokeWidth: 1}]);
+  });
 
+d3.selectAll('.datamaps-subunit')
+  .on('mouseout', function(d, i) {
+    map.arc([]);
+  });
 
 window.addEventListener('resize', function() {
     map.resize();
