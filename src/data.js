@@ -194,15 +194,15 @@ export const EXPORT_DATA = {
    "Malaysia": {
       "Total": 124
    },
-   "Malta": {
-      "Total": 15
-   },
+  //  "Malta": {
+  //     "Total": 15
+  //  },
    "Mauritania": {
       "Total": 2
    },
-   "Mauritius": {
-      "Total": 1
-   },
+  //  "Mauritius": {
+  //     "Total": 1
+  //  },
    "Mexico": {
       "Total": 1182
    },
@@ -266,9 +266,9 @@ export const EXPORT_DATA = {
    "Republic of Serbia": {
       "Total": 0
    },
-   "Seychelles": {
-      "Total": 1
-   },
+  //  "Seychelles": {
+  //     "Total": 1
+  //  },
   //  "Singapore": {
   //     "Total": 5238
   //  },
