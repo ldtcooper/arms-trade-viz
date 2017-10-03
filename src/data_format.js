@@ -10,17 +10,29 @@ const totalCalc = function totalCalc(volume) {
   }
 };
 
+const fillCalc = function fillCalc(volume) {
+  if (volume <= 10) {
+    return 'oneToTen';
+  } else if (volume <= 100) {
+    return 'tenToHundred';
+  } else if (volume <= 1000) {
+    return 'hundredToThousand';
+  } else if (volume > 1000) {
+    return 'overThousand';
+  }
+};
+
 const dataFormater = function dataFormater(dataset) {
   const keys = Object.keys(dataset);
   let outputData = {};
   for (let i = 0; i < keys.length; i++) {
     outputData[nameToId[keys[i]]] = {
-      fillKey: 'partner',
+      fillKey: fillCalc(dataset[keys[i]]["Total"]),
       totalStr: totalCalc(dataset[keys[i]]["Total"]),
       totalNum: dataset[keys[i]]["Total"]
     };
   }
-  outputData["USA"] = { fillKey: "target"};
+  outputData["USA"] = { fillKey: "america"};
   return outputData;
 };
 

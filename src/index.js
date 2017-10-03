@@ -12,13 +12,16 @@ const map = new Datamap(
     responsive: true,
     fills: {
       defaultFill: '#FFFFFF',
-      target: '#001C55',
-      partner: '#A6E1FA'
+      america: '#454A66',
+      oneToTen: '#A6E1FA',
+      tenToHundred: '#0E6BA8',
+      hundredToThousand: '#0A2472',
+      overThousand: '#091E5E'
     },
     data: dataFormater(EXPORT_DATA),
     geographyConfig: {
       borderColor: '#00072D',
-      highlightFillColor: '#0A2472',
+      highlightFillColor: '#171D40',
       highlightBorderColor: "#00072D",
       popupTemplate: countryPopupTemplate
     },
@@ -29,11 +32,7 @@ const map = new Datamap(
   }
 );
 
-// map.arc(exportArcsGenerator(EXPORT_DATA));
-d3.selectAll('.datamaps-subunit').on('click', function(d, i) {
-  console.log(d);
-  map.arc([{origin: 'USA', destination: d.id, strokeWidth: 1}]);
-});
+
 
 window.addEventListener('resize', function() {
     map.resize();
