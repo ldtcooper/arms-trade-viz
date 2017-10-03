@@ -28,9 +28,6 @@ const dataFormater = function dataFormater(dataset) {
   const keys = Object.keys(dataset);
   let outputData = {};
   for (let i = 0; i < keys.length; i++) {
-    if (nameToId[keys[i]] === undefined) {
-      console.log(keys[i]);
-    }
     outputData[nameToId[keys[i]]] = {
       fillKey: 'partner',
       total: totalCalc(dataset[keys[i]]["Total"]),
@@ -40,7 +37,6 @@ const dataFormater = function dataFormater(dataset) {
   return outputData;
 };
 
-console.log(dataFormater(EXPORT_DATA));
 const map = new Datamap(
   {
     element: document.getElementById('basic-map'),
@@ -56,7 +52,7 @@ const map = new Datamap(
       highlightFillColor: '#3399ff',
       highlightBorderColor: "#003366",
       popupTemplate: function(geography, data) {
-          return `&lt;div class="hoverinfo"&gt;&lt;strong&gt;Country: ${geography.properties.name}\nValue: ${data.Total}&lt;/strong&gt;&lt;/div&gt;`;
+          return `<div class="hoverinfo"><strong>Country: ${geography.properties.name}</strong> <strong>Value: ${data.total}</strong></div>`;
         },
     }
   }
