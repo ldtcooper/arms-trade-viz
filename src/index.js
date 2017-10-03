@@ -1,5 +1,5 @@
-import Datamap from 'datamaps';
-import { EXPORT_DATA, IMPORT_DATA } from 'data.js';
+const Datamap = require('datamaps');
+import { EXPORT_DATA, IMPORT_DATA } from './data.js';
 
 const arcRanges = function tradeRanges(volume) {
   switch (volume) {
