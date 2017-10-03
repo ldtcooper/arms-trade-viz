@@ -12,21 +12,28 @@ const arcRanges = function tradeRanges(volume) {
   }
 };
 
+const totalCalc = function totalCalc(volume) {
+  if (volume === 0) {
+    return "Less than $1,000,000";
+  } else if (volume < 1000 ) {
+    return `$${volume} million`;
+  } else {
+    return `$${volume / 1000} billion`;
+  }
+};
+
 export const exportArcsGenerator = function arcsGenerator(dataset) {
   const keys = Object.keys(dataset);
   let outputData = [];
   for (var i = 0; i < keys.length; i++) {
-    try {
-          outputData.push({
-          origin: "USA",
-          destination: nameToId[keys[i]],
-          options: {strokeWidth: arcRanges(dataset[keys[i]]["Total"])}
-        });
-      } catch(e) {
-        console.log(e);
-      }
+      outputData.push({
+      origin: "USA",
+      destination: nameToId[keys[i]],
+      options: {strokeWidth: arcRanges(dataset[keys[i]]["Total"])},
+      total: totalCalc(dataset[keys[i]]["Total"]),
+      name: keys[i]
+    });
   }
-  console.log(outputData);
   return outputData;
 };
 
