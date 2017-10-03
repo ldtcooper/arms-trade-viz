@@ -2,15 +2,14 @@ const Datamap = require('datamaps');
 import { EXPORT_DATA, IMPORT_DATA } from './data.js';
 
 const arcRanges = function tradeRanges(volume) {
-  switch (volume) {
-    case volume < 2500:
-      return 2;
-    case volume < 5000:
-      return 4;
-    case volume < 7500:
-      return 8;
-    default:
-      return 16;
+  if (volume < 2500) {
+    return 2;
+  } else if (volume < 5000) {
+    return 4;
+  } else if (volume < 7500) {
+    return 8;
+  } else {
+    return 16;
   }
 };
 
