@@ -20,12 +20,12 @@ export const EXPORT_DATA = {
    "Azerbaijan": {
       "Total": 4
    },
-   "Bahamas": {
+   "The Bahamas": {
       "Total": 4
    },
-   "Bahrain": {
-      "Total": 295
-   },
+  //  "Bahrain": {
+  //     "Total": 295
+  //  },
    "Bangladesh": {
       "Total": 110
    },
@@ -68,7 +68,7 @@ export const EXPORT_DATA = {
    "Colombia": {
       "Total": 1259
    },
-   "Congo": {
+   "Republic of the Congo": {
       "Total": 1
    },
    "Costa Rica": {
@@ -89,7 +89,7 @@ export const EXPORT_DATA = {
    "Dominican Republic": {
       "Total": 50
    },
-   "DR Congo": {
+   "Democratic Republic of the Congo": {
       "Total": 28
    },
    "Ecuador": {
@@ -263,15 +263,15 @@ export const EXPORT_DATA = {
    "Senegal": {
       "Total": 4
    },
-   "Serbia": {
+   "Republic of Serbia": {
       "Total": 0
    },
    "Seychelles": {
       "Total": 1
    },
-   "Singapore": {
-      "Total": 5238
-   },
+  //  "Singapore": {
+  //     "Total": 5238
+  //  },
    "Slovenia": {
       "Total": 1
    },
@@ -299,7 +299,7 @@ export const EXPORT_DATA = {
    "Switzerland": {
       "Total": 84
    },
-   "Taiwan (ROC)": {
+   "Taiwan": {
       "Total": 5226
    },
    "Thailand": {
@@ -314,7 +314,7 @@ export const EXPORT_DATA = {
    "Turkey": {
       "Total": 4667
    },
-   "UAE": {
+   "United Arab Emirates": {
       "Total": 9378
    },
    "Uganda": {

@@ -28,6 +28,9 @@ const dataFormater = function dataFormater(dataset) {
   const keys = Object.keys(dataset);
   let outputData = {};
   for (let i = 0; i < keys.length; i++) {
+    if (nameToId[keys[i]] === undefined) {
+      console.log(keys[i]);
+    }
     outputData[nameToId[keys[i]]] = {
       fillKey: 'partner',
       total: totalCalc(dataset[keys[i]]["Total"]),
