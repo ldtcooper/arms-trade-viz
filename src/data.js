@@ -1,4 +1,4 @@
-export const exportString = {
+export const EXPORT_DATA = {
    "Afghanistan": {
       "Total": 1954
    },
@@ -122,7 +122,7 @@ export const exportString = {
    "Georgia": {
       "Total": 29
    },
-   "Germany (FRG)": {
+   "Germany": {
       "Total": 1355
    },
    "Ghana": {
@@ -188,7 +188,7 @@ export const exportString = {
    "Luxembourg": {
       "Total": 1
    },
-   "Macedonia (FYROM)": {
+   "Macedonia": {
       "Total": 0
    },
    "Malaysia": {
