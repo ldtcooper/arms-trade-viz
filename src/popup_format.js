@@ -4,10 +4,9 @@ export const countryPopupTemplate = function popupTemplate(geography, data) {
   if (geography.id === "USA") {
     return `<div class="hoverinfo"><strong>Country: ${geography.properties.name}</strong></div>`;
   } else if (data) {
-    return `<div class="hoverinfo"><strong>Country: ${geography.properties.name}</strong> <strong>Value: ${data.total}</strong></div>`;
-  }
-};
+    return `<div class="hoverinfo"><strong>Country: ${geography.properties.name}</strong> <strong>Value: ${data.totalStr}</strong></div>`;
+  } else {
+    return `<div class="hoverinfo"><strong>Country: ${geography.properties.name}</strong> <strong>Value: $0</strong></div>`;
 
-export const arcPopupTemplate = function popupTemplate(geography, data) {
-  return `<div class="hoverinfo"><strong>Country: ${data.name}</strong> <strong>Value: ${data.total}</strong></div>`;
+  }
 };

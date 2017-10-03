@@ -16,7 +16,8 @@ const dataFormater = function dataFormater(dataset) {
   for (let i = 0; i < keys.length; i++) {
     outputData[nameToId[keys[i]]] = {
       fillKey: 'partner',
-      total: totalCalc(dataset[keys[i]]["Total"])
+      totalStr: totalCalc(dataset[keys[i]]["Total"]),
+      totalNum: dataset[keys[i]]["Total"]
     };
   }
   outputData["USA"] = { fillKey: "target"};
