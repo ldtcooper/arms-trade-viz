@@ -1,7 +1,7 @@
 #basic-map {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 80%;
   }
 
 .hoverinfo {
@@ -13,11 +13,24 @@ h1, h2, p, dt {
   font-family: 'Lato', sans-serif;
 }
 
+header {
+  height: 10%;
+  width: 100%;
+  background-color: #171D40;
+}
+
+h1 {
+  color: white;
+  font-size: 36px;
+  padding: 3%;
+}
+
 dl {
   display: flex;
   flex-flow: row wrap;
   align-content: center;
   align-items: center;
+  height: 10%;
 }
 
 dd {
