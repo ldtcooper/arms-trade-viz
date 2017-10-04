@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background: '#99ccff'
   }
 
 .hoverinfo {
@@ -10,13 +9,22 @@
   flex-direction: column;
 }
 
+h1, h2, p, dt {
+  font-family: 'Lato', sans-serif;
+}
+
 dl {
   display: flex;
   flex-flow: row wrap;
+  align-content: center;
+  align-items: center;
 }
 
 dd {
   border: 1px black solid;
+  border-radius: 5px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 5px;
 }
 
 
