@@ -6,7 +6,6 @@ import { countryPopupTemplate, arcPopupTemplate } from './popup_format.js';
 import { exportArcsGenerator } from './arcs_generator.js';
 
 
-
 const map = new Datamap(
   {
     element: document.getElementById('basic-map'),
