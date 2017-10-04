@@ -1,7 +1,9 @@
 #basic-map {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 80%;
+  margin: auto;
+  border: 5px solid black;
   }
 
 .hoverinfo {

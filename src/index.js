@@ -10,6 +10,7 @@ const mapMaker = function mapMaker(dataset) {
     {
       element: document.getElementById('basic-map'),
       responsive: true,
+      projection: 'mercator',
       fills: {
         defaultFill: '#FFFFFF',
         target: '#454A66',
