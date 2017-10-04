@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import { EXPORT_DATA, IMPORT_DATA } from './data.js';
 import dataFormater from './data_format.js';
 import { countryPopupTemplate, arcPopupTemplate } from './popup_format.js';
-import { exportArcsGenerator } from './arcs_generator.js';
+import { exportArcsGenerator, importArcsGenerator } from './arcs_generator.js';
 
 let mode = 'export';
 
@@ -17,9 +17,11 @@ button.addEventListener('click', () => {
   if (button.value === 'Imports') {
     button.value = 'Exports';
     map = mapMaker(IMPORT_DATA);
+    importArcDraw();
   } else {
     button.value = 'Imports';
     map = mapMaker(EXPORT_DATA);
+    exportArcDraw();
   }
 });
 
@@ -51,16 +53,32 @@ const mapMaker = function mapMaker(dataset) {
   ));
 };
 
-let map = mapMaker(EXPORT_DATA);
+const exportArcDraw = () => {
+  d3.selectAll('.datamaps-subunit')
+    .on('click', function(d, i) {
+      let data = map.options.data[d.id];
+      let w = data.totalNum ? data.totalNum : 0;
+      if (d.id !== 'USA') {
+        map.arc([{origin: 'USA', destination: d.id, strokeWidth: 2 * Math.trunc(Math.log(w) + 1)}]);
+      }
+    });
+};
 
-d3.selectAll('.datamaps-subunit')
-  .on('click', function(d, i) {
-    let data = map.options.data[d.id];
-    let w = data.totalNum ? data.totalNum : 0;
-    if (d.id !== 'USA') {
-      map.arc([{origin: 'USA', destination: d.id, strokeWidth: 2 * Math.trunc(Math.log(w) + 1)}]);
-    }
-  });
+const importArcDraw = () => {
+  d3.selectAll('.datamaps-subunit')
+    .on('click', function(d, i) {
+      let data = map.options.data[d.id];
+      let w = data.totalNum ? data.totalNum : 0;
+      if (d.id !== 'USA') {
+        map.arc([{origin: d.id, destination: 'USA', strokeWidth: 2 * Math.trunc(Math.log(w) + 1)}]);
+      }
+    });
+};
+
+let map = mapMaker(EXPORT_DATA);
+exportArcDraw();
+
+
 
 window.addEventListener('resize', function() {
     map.resize();
