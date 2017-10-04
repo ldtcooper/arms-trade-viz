@@ -38,7 +38,6 @@ const arcDraw = (mode, target) => {
     .on('click', function(d, i) {
       let data = map.options.data[d.id];
       let w = data.totalNum ? data.totalNum : 0;
-      console.log(map.options.data);
       if (mode === 'export') {
         if (d.id !== target) {
           map.arc([{origin: target, destination: d.id, strokeWidth: 2 * Math.trunc(Math.log(w) + 1)}]);
@@ -50,21 +49,6 @@ const arcDraw = (mode, target) => {
       }
 
     });
-};
-
-// legend
-let lgd = {
-  legendTitle: "Legend",
-  defaultFillName: "No Trade in Arms",
-  labels: {
-    // target is fixed now
-    // will eventually change with target country
-    target: 'United States',
-    oneToTen: 'Under ten million USD',
-    tenToHundred: 'Ten to One Hundred million USD',
-    hundredToThousand: 'One Hundred million to One Billion USD',
-    overThousand: 'Over one billion'
-  }
 };
 
 // event handlers for import/export toggle
@@ -83,13 +67,11 @@ button.addEventListener('click', () => {
     map = mapMaker(EXPORT_DATA);
     arcDraw('export', 'USA');
   }
-  map.legend(lgd);
 });
 
 // Initial map drawer
 let map = mapMaker(EXPORT_DATA);
 arcDraw('export', 'USA');
-map.legend(lgd);
 
 // Keeps map responsive
 window.addEventListener('resize', function() {
