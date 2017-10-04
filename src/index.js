@@ -52,7 +52,7 @@ const arcDraw = (mode, target) => {
 };
 
 // event handlers for import/export toggle
-let button = document.querySelector("input");
+let button = document.getElementById("toggle-button");
 let mapDiv = document.getElementById('basic-map');
 button.addEventListener('click', () => {
   while (mapDiv.firstChild) {
