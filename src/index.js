@@ -6,6 +6,7 @@ import { countryPopupTemplate, arcPopupTemplate } from './popup_format.js';
 import { exportArcsGenerator } from './arcs_generator.js';
 
 
+
 const map = new Datamap(
   {
     element: document.getElementById('basic-map'),
@@ -26,20 +27,19 @@ const map = new Datamap(
       popupTemplate: countryPopupTemplate
     },
     arcConfig: {
-      strokeColor: 'rgba(14,107,168, 0.4)',
+      strokeColor: 'gold',
       animationSpeed: 2000
     }
   }
 );
 
 d3.selectAll('.datamaps-subunit')
-  .on('mouseover', function(d, i) {
-    console.log(i);
-    map.arc([{origin: 'USA', destination: d.id, strokeWidth: 1}]);
-  });
-
-d3.selectAll('.datamaps-subunit')
-  .on('mouseout', function(d, i) {
+  .on('click', function(d, i) {
+    let data = map.options.data[d.id];
+    let w = data.totalNum ? data.totalNum : 0;
+    if (d.id !== 'USA') {
+      map.arc([{origin: 'USA', destination: d.id, strokeWidth: Math.trunc(Math.log(w) + 1)}]);
+    }
   });
 
 window.addEventListener('resize', function() {
