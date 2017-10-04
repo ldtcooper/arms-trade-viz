@@ -17,12 +17,32 @@ header {
   height: 10%;
   width: 100%;
   background-color: #171D40;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.icons {
+  display: flex;
+  width: 10%;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.icons a i {
+  font-size: 36px;
+  color: white;
+}
+
+.icons a i:hover {
+  color: #A6E1FA;
 }
 
 h1 {
   color: white;
   font-size: 36px;
-  padding: 3%;
+  padding: 2% 3% 2% 3%;
 }
 
 dl {
