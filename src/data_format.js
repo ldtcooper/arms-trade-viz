@@ -32,7 +32,7 @@ const dataFormater = function dataFormater(dataset) {
       totalNum: dataset[keys[i]]["Total"]
     };
   }
-  outputData["USA"] = { fillKey: "america"};
+  outputData["USA"] = { fillKey: "target"};
   return outputData;
 };
 
