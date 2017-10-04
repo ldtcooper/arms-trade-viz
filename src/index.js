@@ -7,45 +7,51 @@ import { exportArcsGenerator } from './arcs_generator.js';
 
 let mode = 'export';
 
+
 let button = document.querySelector("input");
-button.addEventListener('click', function() {
-  console.log(button.value);
+let mapDiv = document.getElementById('basic-map');
+button.addEventListener('click', () => {
+  while (mapDiv.firstChild) {
+    mapDiv.removeChild(mapDiv.firstChild);
+  }
   if (button.value === 'Imports') {
     button.value = 'Exports';
-    mode = 'import';
+    map = mapMaker(IMPORT_DATA);
   } else {
     button.value = 'Imports';
-    mode = 'export';
+    map = mapMaker(EXPORT_DATA);
   }
 });
 
-const dataFetcher = function dataFetcher(){};
-
-const map = new Datamap(
-  {
-    element: document.getElementById('basic-map'),
-    responsive: true,
-    fills: {
-      defaultFill: '#FFFFFF',
-      america: '#454A66',
-      oneToTen: '#A6E1FA',
-      tenToHundred: '#0E6BA8',
-      hundredToThousand: '#0A2472',
-      overThousand: '#091E5E'
-    },
-    data: dataFormater(EXPORT_DATA),
-    geographyConfig: {
-      borderColor: '#304049',
-      highlightFillColor: '#171D40',
-      highlightBorderColor: "#304049",
-      popupTemplate: countryPopupTemplate
-    },
-    arcConfig: {
-      strokeColor: 'rgba(191, 63, 63, 0.5)',
-      animationSpeed: 2000
+const mapMaker = function mapMaker(dataset) {
+  return (new Datamap(
+    {
+      element: document.getElementById('basic-map'),
+      responsive: true,
+      fills: {
+        defaultFill: '#FFFFFF',
+        america: '#454A66',
+        oneToTen: '#A6E1FA',
+        tenToHundred: '#0E6BA8',
+        hundredToThousand: '#0A2472',
+        overThousand: '#091E5E'
+      },
+      data: dataFormater(dataset),
+      geographyConfig: {
+        borderColor: '#304049',
+        highlightFillColor: '#171D40',
+        highlightBorderColor: "#304049",
+        popupTemplate: countryPopupTemplate
+      },
+      arcConfig: {
+        strokeColor: 'rgba(191, 63, 63, 0.5)',
+        animationSpeed: 2000
+      }
     }
-  }
-);
+  ));
+};
+
+let map = mapMaker(EXPORT_DATA);
 
 d3.selectAll('.datamaps-subunit')
   .on('click', function(d, i) {
