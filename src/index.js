@@ -28,7 +28,7 @@ const mapMaker = function mapMaker(dataset) {
       },
       arcConfig: {
         strokeColor: 'rgba(191, 63, 63, 0.5)',
-        animationSpeed: 2000
+        animationSpeed: 1000
       }
     }
   ));

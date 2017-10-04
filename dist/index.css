@@ -63,6 +63,7 @@ dl {
   align-content: center;
   align-items: space-around;
   height: 10%;
+  margin-bottom: 1%;
 }
 
 dd {
@@ -73,7 +74,7 @@ dd {
 }
 
 #toggle-button {
-  margin: 3% 0% 0% 5%;
+  margin: 3% 0% 2% 5%;
 }
 
 /*Palette: Dark to Light*/

@@ -356,7 +356,7 @@ export const IMPORT_DATA = {
    "France": {
       "Total": 612
    },
-   "Germany (FRG)": {
+   "Germany": {
       "Total": 1467
    },
    "Israel": {
