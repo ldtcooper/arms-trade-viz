@@ -1,6 +1,6 @@
 import { nameToId } from './name_to_id.js';
 
-const totalCalc = function totalCalc(volume) {
+const stringCalc = function stringCalc(volume) {
   if (volume === 0) {
     return "Less than $1,000,000";
   } else if (volume < 1000 ) {
@@ -22,14 +22,25 @@ const fillCalc = function fillCalc(volume) {
   }
 };
 
-const dataFormater = function dataFormater(dataset) {
+const totalCalc = function totalCalc(start, end, obj) {
+  let total = obj[start];
+  if (start < end) {
+    for (var i = start; i <= end; i++) {
+      total += obj[i];
+    }
+  }
+  return total;
+};
+
+const dataFormater = function dataFormater(dataset, start, end) {
   const keys = Object.keys(dataset);
   let outputData = {};
   for (let i = 0; i < keys.length; i++) {
+    let total = totalCalc(start, end, dataset[keys[i]]);
     outputData[nameToId[keys[i]]] = {
-      fillKey: fillCalc(dataset[keys[i]]["Total"]),
-      totalStr: totalCalc(dataset[keys[i]]["Total"]),
-      totalNum: dataset[keys[i]]["Total"]
+      totalNum: total,
+      fillKey: fillCalc(total),
+      totalStr: stringCalc(total),
     };
   }
   outputData["USA"] = { fillKey: "target"};
