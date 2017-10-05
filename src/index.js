@@ -5,7 +5,7 @@ import dataFormater from './data_format.js';
 import { countryPopupTemplate, arcPopupTemplate } from './popup_format.js';
 import { exportArcsGenerator, importArcsGenerator } from './arcs_generator.js';
 
-const mapMaker = function mapMaker(dataset) {
+const mapMaker = function mapMaker(dataset, start, end) {
   return (new Datamap(
     {
       element: document.getElementById('basic-map'),
@@ -19,7 +19,7 @@ const mapMaker = function mapMaker(dataset) {
         hundredToThousand: '#0A2472',
         overThousand: '#091E5E'
       },
-      data: dataFormater(dataset, 2001, 2016),
+      data: dataFormater(dataset, start, end),
       geographyConfig: {
         borderColor: '#304049',
         highlightFillColor: '#171D40',
@@ -63,21 +63,30 @@ button.addEventListener('click', () => {
   }
   if (button.value === 'Imports') {
     button.value = 'Exports';
-    map = mapMaker(IMPORT_DATA);
+    map = mapMaker(IMPORT_DATA, startYear, endYear);
     arcDraw('import', 'USA');
   } else {
     button.value = 'Imports';
-    map = mapMaker(EXPORT_DATA);
+    map = mapMaker(EXPORT_DATA, startYear, endYear);
     arcDraw('export', 'USA');
   }
 });
 
-let start = 2001;
-let end = 2016;
+let startYear = 2001;
+let endYear = 2016;
+
+let startBar = document.getElementById('start');
+let endBar = document.getElementById('end');
+startBar.addEventListener('change', () => {
+  while (mapDiv.firstChild) {
+    mapDiv.removeChild(mapDiv.firstChild);
+  }
+  map = mapMaker();
+});
 
 
 // Initial map drawer
-let map = mapMaker(EXPORT_DATA);
+let map = mapMaker(EXPORT_DATA, startYear, endYear);
 arcDraw('export', 'USA');
 
 // Keeps map responsive
