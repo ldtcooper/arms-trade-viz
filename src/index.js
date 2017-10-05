@@ -83,7 +83,18 @@ const pathButton = document.getElementById("path-button");
 pathButton.addEventListener('click', () => {
   if (pathButton.value === 'See All Paths') {
     pathButton.value = 'Hide All Paths';
-
+    const keys = Object.keys(map.options.data);
+    let arcs = [];
+    for (var i = 0; i < keys.length; i++) {
+      if (keys[i] !== 'USA') {
+        console.log(keys[i]);
+        let origin = mode === 'Imports' ? keys[i] : 'USA';
+        let destination = mode === 'Imports' ? 'USA' : keys[i];
+        let strokeWidth = 2 * Math.trunc(Math.log(map.options.data[keys[i]].totalNum) + 1);
+        arcs.push({origin, destination, strokeWidth});
+      }
+    }
+    map.arc(arcs);
   } else {
     pathButton.value = 'See All Paths';
     map.arc([]);
