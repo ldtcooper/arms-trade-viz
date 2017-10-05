@@ -43,7 +43,7 @@ const arcDraw = (mode, target) => {
     .on('click', function(d, i) {
       let data = map.options.data[d.id];
       let w = data.totalNum ? data.totalNum : 0;
-      if (mode === 'export') {
+      if (mode === 'Exports') {
         if (d.id !== target) {
           map.arc([{origin: target, destination: d.id, strokeWidth: 2 * Math.trunc(Math.log(w) + 1)}]);
         }
@@ -68,15 +68,15 @@ button.addEventListener('click', () => {
   while (mapDiv.firstChild) {
     mapDiv.removeChild(mapDiv.firstChild);
   }
+  mode = button.value;
   if (button.value === 'Imports') {
     button.value = 'Exports';
     map = mapMaker(IMPORT_DATA, startYear, endYear);
-    arcDraw('import', 'USA');
   } else {
     button.value = 'Imports';
     map = mapMaker(EXPORT_DATA, startYear, endYear);
-    arcDraw('export', 'USA');
   }
+  arcDraw(mode, 'USA');
 });
 
 
@@ -88,13 +88,18 @@ startBar.addEventListener('change', () => {
   while (mapDiv.firstChild) {
     mapDiv.removeChild(mapDiv.firstChild);
   }
+  if (mode) {
+
+  } else {
+
+  }
   map = mapMaker();
 });
 
 
 // Initial map drawer
 let map = mapMaker(EXPORT_DATA, startYear, endYear);
-arcDraw('export', 'USA');
+arcDraw('Exports', 'USA');
 
 // Keeps map responsive
 window.addEventListener('resize', function() {
