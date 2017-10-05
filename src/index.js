@@ -88,14 +88,36 @@ startBar.addEventListener('change', () => {
   while (mapDiv.firstChild) {
     mapDiv.removeChild(mapDiv.firstChild);
   }
-  if (mode) {
-
-  } else {
-
+  startYear = startBar.value;
+  const opts = endBar.getElementsByTagName("option");
+  for (let i = 0; i < opts.length; i++) {
+    opts[i].disabled = opts[i].value < startYear ? true : false;
   }
-  map = mapMaker();
+  if (mode === 'Exports') {
+    map = mapMaker(EXPORT_DATA, startYear, endYear);
+  } else {
+    map = mapMaker(IMPORT_DATA, startYear, endYear);
+  }
+  arcDraw(mode, 'USA');
 });
 
+endBar.addEventListener('change', () => {
+  endYear = endBar.value;
+  while (mapDiv.firstChild) {
+    mapDiv.removeChild(mapDiv.firstChild);
+  }
+  endYear = endBar.value;
+  const opts = startBar.getElementsByTagName("option");
+  for (let i = 0; i < opts.length; i++) {
+    opts[i].disabled = opts[i].value > endYear ? true : false;
+  }
+  if (mode === 'Exports') {
+    map = mapMaker(EXPORT_DATA, startYear, endYear);
+  } else {
+    map = mapMaker(IMPORT_DATA, startYear, endYear);
+  }
+  arcDraw(mode, 'USA');
+});
 
 // Initial map drawer
 let map = mapMaker(EXPORT_DATA, startYear, endYear);
