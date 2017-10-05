@@ -63,17 +63,17 @@ let endYear = 2016;
 
 //event handers
 
-let button = document.getElementById("toggle-button");
-button.addEventListener('click', () => {
+let toggleButton = document.getElementById("toggle-button");
+toggleButton.addEventListener('click', () => {
   while (mapDiv.firstChild) {
     mapDiv.removeChild(mapDiv.firstChild);
   }
-  mode = button.value;
-  if (button.value === 'Imports') {
-    button.value = 'Exports';
+  mode = toggleButton.value;
+  if (toggleButton.value === 'Imports') {
+    toggleButton.value = 'Exports';
     map = mapMaker(IMPORT_DATA, startYear, endYear);
   } else {
-    button.value = 'Imports';
+    toggleButton.value = 'Imports';
     map = mapMaker(EXPORT_DATA, startYear, endYear);
   }
   arcDraw(mode, 'USA');
