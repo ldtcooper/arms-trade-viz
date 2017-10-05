@@ -79,8 +79,6 @@ button.addEventListener('click', () => {
   arcDraw(mode, 'USA');
 });
 
-
-
 let startBar = document.getElementById('start');
 let endBar = document.getElementById('end');
 startBar.addEventListener('change', () => {

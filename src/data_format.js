@@ -1,7 +1,9 @@
 import { nameToId } from './name_to_id.js';
 
 const stringCalc = function stringCalc(volume) {
-  if (volume === 0) {
+  if (volume === null) {
+    return "$0";
+  } if (volume === 0) {
     return "Less than $1,000,000";
   } else if (volume < 1000 ) {
     return `$${volume} million`;
@@ -11,7 +13,9 @@ const stringCalc = function stringCalc(volume) {
 };
 
 const fillCalc = function fillCalc(volume) {
-  if (volume <= 10) {
+  if (volume === null) {
+    return 'defaultFill';
+  } else if (volume <= 10) {
     return 'oneToTen';
   } else if (volume <= 100) {
     return 'tenToHundred';
