@@ -19,7 +19,7 @@ const mapMaker = function mapMaker(dataset) {
         hundredToThousand: '#0A2472',
         overThousand: '#091E5E'
       },
-      data: dataFormater(dataset),
+      data: dataFormater(dataset, 2001, 2016),
       geographyConfig: {
         borderColor: '#304049',
         highlightFillColor: '#171D40',
