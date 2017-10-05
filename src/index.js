@@ -63,7 +63,7 @@ let endYear = 2016;
 
 //event handers
 
-let toggleButton = document.getElementById("toggle-button");
+const toggleButton = document.getElementById("toggle-button");
 toggleButton.addEventListener('click', () => {
   while (mapDiv.firstChild) {
     mapDiv.removeChild(mapDiv.firstChild);
@@ -77,6 +77,15 @@ toggleButton.addEventListener('click', () => {
     map = mapMaker(EXPORT_DATA, startYear, endYear);
   }
   arcDraw(mode, 'USA');
+});
+
+const pathButton = document.getElementById("path-button");
+pathButton.addEventListener('click', () => {
+  if (pathButton.value === 'See All Paths') {
+    pathButton.value = 'Hide All Paths';
+  } else {
+    pathButton.value = 'See All Paths';
+  }
 });
 
 let startBar = document.getElementById('start');
