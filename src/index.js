@@ -52,6 +52,8 @@ const arcDraw = (mode, target) => {
     });
 };
 
+
+// TODO: Add event handlers to select tags
 // event handlers for import/export toggle
 let button = document.getElementById("toggle-button");
 let mapDiv = document.getElementById('basic-map');
@@ -69,6 +71,10 @@ button.addEventListener('click', () => {
     arcDraw('export', 'USA');
   }
 });
+
+let start = 2001;
+let end = 2016;
+
 
 // Initial map drawer
 let map = mapMaker(EXPORT_DATA);
