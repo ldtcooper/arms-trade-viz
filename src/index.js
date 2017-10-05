@@ -5,10 +5,14 @@ import dataFormater from './data_format.js';
 import { countryPopupTemplate, arcPopupTemplate } from './popup_format.js';
 import { exportArcsGenerator, importArcsGenerator } from './arcs_generator.js';
 
+// div where all the map magic happens
+let mapDiv = document.getElementById('basic-map');
+
+// Map functions
 const mapMaker = function mapMaker(dataset, start, end) {
   return (new Datamap(
     {
-      element: document.getElementById('basic-map'),
+      element: mapDiv,
       responsive: true,
       projection: 'mercator',
       fills: {
@@ -52,11 +56,14 @@ const arcDraw = (mode, target) => {
     });
 };
 
+// default map values: exports from 2001-2016
+let mode = 'Exports';
+let startYear = 2001;
+let endYear = 2016;
 
-// TODO: Add event handlers to select tags
-// event handlers for import/export toggle
+//event handers
+
 let button = document.getElementById("toggle-button");
-let mapDiv = document.getElementById('basic-map');
 button.addEventListener('click', () => {
   while (mapDiv.firstChild) {
     mapDiv.removeChild(mapDiv.firstChild);
@@ -72,12 +79,12 @@ button.addEventListener('click', () => {
   }
 });
 
-let startYear = 2001;
-let endYear = 2016;
+
 
 let startBar = document.getElementById('start');
 let endBar = document.getElementById('end');
 startBar.addEventListener('change', () => {
+  startYear = startBar.value;
   while (mapDiv.firstChild) {
     mapDiv.removeChild(mapDiv.firstChild);
   }
