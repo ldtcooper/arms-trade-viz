@@ -83,8 +83,10 @@ const pathButton = document.getElementById("path-button");
 pathButton.addEventListener('click', () => {
   if (pathButton.value === 'See All Paths') {
     pathButton.value = 'Hide All Paths';
+
   } else {
     pathButton.value = 'See All Paths';
+    map.arc([]);
   }
 });
 
