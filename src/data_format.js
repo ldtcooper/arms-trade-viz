@@ -36,7 +36,7 @@ const totalCalc = function totalCalc(start, end, obj) {
   return total;
 };
 
-const dataFormater = function dataFormater(dataset, start, end) {
+const dataFormatter = function dataFormatter(dataset, start, end) {
   const keys = Object.keys(dataset);
   let outputData = {};
   for (let i = 0; i < keys.length; i++) {
@@ -51,4 +51,4 @@ const dataFormater = function dataFormater(dataset, start, end) {
   return outputData;
 };
 
-export default dataFormater;
+export default dataFormatter;

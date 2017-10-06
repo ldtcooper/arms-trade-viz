@@ -1,6 +1,6 @@
 import Datamap from 'datamaps';
 import { countryPopupTemplate } from './popup_format.js';
-import dataFormater from './data_format.js';
+import dataFormatter from './data_format.js';
 
 
 export const mapDiv = document.getElementById('basic-map');
@@ -19,7 +19,7 @@ export const mapMaker = function mapMaker(dataset, start, end) {
         hundredToThousand: '#0A2472',
         overThousand: '#091E5E'
       },
-      data: dataFormater(dataset, start, end),
+      data: dataFormatter(dataset, start, end),
       geographyConfig: {
         borderColor: '#304049',
         highlightFillColor: '#171D40',

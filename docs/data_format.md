@@ -1,5 +1,17 @@
+## Data Formatter
+
 ``` js
-const dataFormater = function dataFormater(dataset, start, end) {
+const totalCalc = function totalCalc(start, end, obj) {
+  let total = obj[start];
+  if (start < end) {
+    for (var i = start; i <= end; i++) {
+      total += obj[i];
+    }
+  }
+  return total;
+};
+
+const dataFormatter = function dataFormatter(dataset, start, end) {
   const keys = Object.keys(dataset);
   let outputData = {};
   for (let i = 0; i < keys.length; i++) {
