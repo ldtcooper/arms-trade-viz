@@ -63,6 +63,23 @@ h1 {
   margin: 2% 0% 1% 0%;
 }
 
+dl {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  align-items: space-around;
+  height: 10%;
+  margin-bottom: 1%;
+}
+
+
+dd {
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 5px;
+}
+
 #toggle-button {
   margin: 3% 0% 2% 5%;
 }
