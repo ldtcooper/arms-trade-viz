@@ -12,7 +12,7 @@ export const mapMaker = function mapMaker(dataset, start, end) {
       responsive: true,
       projection: 'mercator',
       fills: {
-        defaultFill: '#FFFFFF',
+        defaultFill: 'gainsboro',
         target: '#454A66',
         oneToTen: '#A6E1FA',
         tenToHundred: '#0E6BA8',

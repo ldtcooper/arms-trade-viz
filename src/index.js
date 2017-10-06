@@ -1,9 +1,7 @@
 import Datamap from 'datamaps';
 import * as d3 from 'd3';
 import { EXPORT_DATA, IMPORT_DATA } from './data.js';
-import { mapDiv, mapMaker} from './map_maker.js';
-
-// Map functions
+import { mapDiv, mapMaker } from './map_maker.js';
 
 const arcDraw = (mode, target) => {
   d3.selectAll('.datamaps-subunit')
@@ -22,11 +20,6 @@ const arcDraw = (mode, target) => {
 
     });
 };
-
-// default map values: exports from 2001-2016
-let mode = 'Exports';
-let startYear = 2001;
-let endYear = 2016;
 
 //event handers
 
@@ -108,6 +101,11 @@ endBar.addEventListener('change', () => {
   }
   arcDraw(mode, 'USA');
 });
+
+// default map values: exports from 2001-2016
+let mode = 'Exports';
+let startYear = 2001;
+let endYear = 2016;
 
 // Initial map drawer
 let map = mapMaker(EXPORT_DATA, startYear, endYear);
