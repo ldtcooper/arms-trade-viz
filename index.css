@@ -80,13 +80,18 @@ dd {
 
 .map-options {
   display: flex;
-  margin: 1% 0% 1% 5%;
+  margin: 1% 0% 1% 0%;
   align-content: center;
   align-items: center;
   justify-content: space-around;
-  min-width: 30%;
-  max-width: 30%;
+  flex-flow: row wrap;
+  width: 100%;
   font-family: 'Lato', sans-serif;
+}
+
+label {
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 input {
