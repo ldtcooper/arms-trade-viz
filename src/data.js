@@ -125,7 +125,7 @@ export const EXPORT_DATA = {
       "2015": null,
       "2016": null
    },
-   "Bahamas": {
+   "The Bahamas": {
       "2001": null,
       "2002": null,
       "2003": null,
@@ -141,24 +141,6 @@ export const EXPORT_DATA = {
       "2013": null,
       "2014": null,
       "2015": null,
-      "2016": null
-   },
-   "Bahrain": {
-      "2001": 5,
-      "2002": 54,
-      "2003": 1,
-      "2004": null,
-      "2005": 63,
-      "2006": 3,
-      "2007": 26,
-      "2008": 2,
-      "2009": null,
-      "2010": 68,
-      "2011": null,
-      "2012": null,
-      "2013": 60,
-      "2014": null,
-      "2015": 15,
       "2016": null
    },
    "Bangladesh": {
@@ -1169,24 +1151,6 @@ export const EXPORT_DATA = {
       "2015": 4,
       "2016": 6
    },
-   "Malta": {
-      "2001": null,
-      "2002": null,
-      "2003": null,
-      "2004": null,
-      "2005": null,
-      "2006": null,
-      "2007": null,
-      "2008": null,
-      "2009": null,
-      "2010": null,
-      "2011": 8,
-      "2012": 8,
-      "2013": null,
-      "2014": null,
-      "2015": null,
-      "2016": null
-   },
    "Mauritania": {
       "2001": null,
       "2002": null,
@@ -1204,24 +1168,6 @@ export const EXPORT_DATA = {
       "2014": 2,
       "2015": null,
       "2016": null
-   },
-   "Mauritius": {
-      "2001": null,
-      "2002": null,
-      "2003": null,
-      "2004": null,
-      "2005": null,
-      "2006": null,
-      "2007": null,
-      "2008": null,
-      "2009": null,
-      "2010": null,
-      "2011": null,
-      "2012": null,
-      "2013": null,
-      "2014": null,
-      "2015": null,
-      "2016": 1
    },
    "Mexico": {
       "2001": 145,
@@ -1583,7 +1529,7 @@ export const EXPORT_DATA = {
       "2015": null,
       "2016": 2
    },
-   "Serbia": {
+   "Republic of Serbia": {
       "2001": null,
       "2002": null,
       "2003": null,
@@ -1600,42 +1546,6 @@ export const EXPORT_DATA = {
       "2014": null,
       "2015": null,
       "2016": null
-   },
-   "Seychelles": {
-      "2001": null,
-      "2002": null,
-      "2003": null,
-      "2004": null,
-      "2005": null,
-      "2006": null,
-      "2007": null,
-      "2008": null,
-      "2009": null,
-      "2010": null,
-      "2011": null,
-      "2012": null,
-      "2013": 1,
-      "2014": null,
-      "2015": null,
-      "2016": null
-   },
-   "Singapore": {
-      "2001": 60,
-      "2002": 212,
-      "2003": 51,
-      "2004": 366,
-      "2005": 534,
-      "2006": 34,
-      "2007": 11,
-      "2008": 28,
-      "2009": 775,
-      "2010": 747,
-      "2011": 497,
-      "2012": 456,
-      "2013": 670,
-      "2014": 624,
-      "2015": 75,
-      "2016": 99
    },
    "Slovenia": {
       "2001": 0,

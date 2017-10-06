@@ -45,11 +45,11 @@ const arcDraw = (mode, target) => {
       let w = data.totalNum ? data.totalNum : 0;
       if (mode === 'Exports') {
         if (d.id !== target) {
-          map.arc([{origin: target, destination: d.id, strokeWidth: 2 * Math.trunc(Math.log(w) + 1)}]);
+          map.arc([{origin: target, destination: d.id, strokeWidth: 2 * Math.trunc(Math.log(w + 1))}]);
         }
       } else {
         if (d.id !== 'USA') {
-          map.arc([{origin: d.id, destination: target, strokeWidth: 2 * Math.trunc(Math.log(w) + 1)}]);
+          map.arc([{origin: d.id, destination: target, strokeWidth: 2 * Math.trunc(Math.log(w + 1))}]);
         }
       }
 
@@ -86,12 +86,14 @@ pathButton.addEventListener('click', () => {
   if (pathButton.value === 'See All Paths') {
     pathButton.value = 'Hide All Paths';
     const keys = Object.keys(map.options.data);
+    console.log(keys);
     let arcs = [];
     for (var i = 0; i < keys.length; i++) {
       if (keys[i] !== 'USA') {
         let origin = mode === 'Imports' ? keys[i] : 'USA';
         let destination = mode === 'Imports' ? 'USA' : keys[i];
-        let strokeWidth = 2 * Math.trunc(Math.log(map.options.data[keys[i]].totalNum) + 1);
+        let strokeWidth = 2 * Math.trunc(Math.log(map.options.data[keys[i]].totalNum + 1));
+        console.log(arcs);
         arcs.push({origin, destination, strokeWidth});
       }
     }
