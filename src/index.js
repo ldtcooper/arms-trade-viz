@@ -72,9 +72,11 @@ toggleButton.addEventListener('click', () => {
   if (toggleButton.value === 'Imports') {
     toggleButton.value = 'Exports';
     map = mapMaker(IMPORT_DATA, startYear, endYear);
+    pathButton.value = 'See All Paths';
   } else {
     toggleButton.value = 'Imports';
     map = mapMaker(EXPORT_DATA, startYear, endYear);
+    pathButton.value = 'See All Paths';
   }
   arcDraw(mode, 'USA');
 });
@@ -87,7 +89,6 @@ pathButton.addEventListener('click', () => {
     let arcs = [];
     for (var i = 0; i < keys.length; i++) {
       if (keys[i] !== 'USA') {
-        console.log(keys[i]);
         let origin = mode === 'Imports' ? keys[i] : 'USA';
         let destination = mode === 'Imports' ? 'USA' : keys[i];
         let strokeWidth = 2 * Math.trunc(Math.log(map.options.data[keys[i]].totalNum) + 1);
