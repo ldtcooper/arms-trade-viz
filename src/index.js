@@ -10,15 +10,31 @@ const arcDraw = (mode, target) => {
       let w = data.totalNum ? data.totalNum : 0;
       if (mode === 'Exports') {
         if (d.id !== target) {
-          map.arc([{origin: target, destination: d.id, strokeWidth: 2 * Math.trunc(Math.log(w + 1))}]);
+          map.arc(
+            [
+              {
+                origin: target,
+                destination: d.id,
+                strokeWidth: 2 * Math.trunc(Math.log(w + 1))
+              }
+            ]
+          );
         }
       } else {
         if (d.id !== 'USA') {
-          map.arc([{origin: d.id, destination: target, strokeWidth: 2 * Math.trunc(Math.log(w + 1))}]);
+          map.arc(
+            [
+              {
+                origin: d.id,
+                destination: target,
+                strokeWidth: 2 * Math.trunc(Math.log(w + 1))
+              }
+            ]
+          );
         }
       }
-
-    });
+    }
+  );
 };
 
 //event handers
