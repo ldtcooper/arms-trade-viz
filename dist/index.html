@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <h1>Data Viz!</h1>
+      <h1>The Price of War</h1>
       <div class="icons">
         <a href="https://github.com/ldtcooper">
           <i class="fa fa-github-square" ></i>
@@ -20,28 +20,6 @@
         </a>
       </div>
     </header>
-
-    <div id='basic-map'></div>
-    <div class="legend">
-      <h2>Legend</h2>
-      <dl>
-        <dt>
-          No Trade: <dd style="background-color:gainsboro">&nbsp;</dd>
-        </dt>
-        <dt>
-          Under Ten Million USD: <dd style="background-color:#A6E1FA">&nbsp;</dd>
-        </dt>
-        <dt>
-          Ten to One-Hundred Million USD: <dd style="background-color:#0E6BA8">&nbsp;</dd>
-        </dt>
-        <dt>
-          One-Hundred Million to One Billion USD: <dd style="background-color:#0A2472">&nbsp;</dd>
-        </dt>
-        <dt>
-          Over One Billion USD: <dd style="background-color:#091E5E">&nbsp;</dd>
-        </dt>
-      </dl>
-    </div>
 
     <div class="map-options">
       <input id="toggle-button" type="button" value="Imports"></input>
@@ -87,9 +65,29 @@
           <option value="2001">2001</option>
         </select>
       </label>
-
       <input id="path-button" type="button" value="See All Paths">
     </div>
+
+    <div id='basic-map'></div>
+    <div class="legend">
+      <h2>Legend</h2>
+      <dl>
+        <dt>
+          No Trade: <dd style="background-color:gainsboro">&nbsp;</dd>
+        </dt>
+        <dt>
+          Under Ten Million USD: <dd style="background-color:#A6E1FA">&nbsp;</dd>
+        </dt>
+        <dt>
+          Ten to One-Hundred Million USD: <dd style="background-color:#0E6BA8">&nbsp;</dd>
+        </dt>
+        <dt>
+          One-Hundred Million to One Billion USD: <dd style="background-color:#0A2472">&nbsp;</dd>
+        </dt>
+        <dt>
+          Over One Billion USD: <dd style="background-color:#091E5E">&nbsp;</dd>
+        </dt>
+      </dl>
     <script src="bundle.js"></script>
   </body>
 </html>
