@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Global Arms Trade Visualization</title>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://use.fontawesome.com/3338af2ff2.js"></script>
@@ -20,6 +21,16 @@
         </a>
       </div>
     </header>
+
+    <p class='blurb'>
+      This is a map illustrating the role of the United States in the
+      global arms trade between 2001 and 2015. Darker shades of blue
+      represent higher dollar values. Mouse over a country to see how
+      much weaponry it imports from the U.S. Click it to see a visual
+      representation of the flow of arms. Toggle between exports and
+      imports with the left-most button. See maps of different year
+      ranges by changing the dates. Scroll down to learn more.
+    </p>
 
     <div class="map-options">
       <input id="toggle-button" type="button" value="Imports"></input>
@@ -88,6 +99,40 @@
           Over One Billion USD: <dd style="background-color:#091E5E">&nbsp;</dd>
         </dt>
       </dl>
+
+    <p>
+      The United States is the world's largest exporter of weaponry,
+      having sold $123,440,000,000 (that's 123 billion, plus some)
+      worth of arms in the past fifteen years, with $9,894,000,000
+      (almost 10 billion) of that coming in 2016 alone. This map
+      attempts to illstrate some of the scale of that trade using data
+      from the <a href="https://www.sipri.org/databases/armstransfers">
+      Stockholm International Peace Research Institute's Arms Transfer
+      Database</a>.
+    </p>
+    <p>
+      The largest importer of arms from the U.S. is South Korea
+      ($12 billion since 2001), followed by the U.A.E. ($9.3 billion),
+      Saudi Arabia ($8.3 billion), Australia ($7.6 billion), and
+      Israel ($6.4 billion). Notably missing from this map are the $460
+      million sold to international institutions (mostly to the North
+      Atlantic Treaty Organization, but also to the African Union and the
+      United Nations), as well as the sales to Singapore ($5.2 billion),
+      Bahrain ($295 million), Malta ($15 million), Mauritius ($1 million),
+      and The Seychelles ($1 million) -- all of which were excluded for
+      technical reasons. Finally, the $4 million in sales to 'Unknown
+      Recipients' have been excluded for obvious reasons.
+    </p>
+    <p>
+      While certainly not the titan in arms imports it is in imports,
+      the U.S. has bought a respectable $11.7 billion worth of arms from
+      the rest of the world since 2001. THe largest exporters of weapons to
+      the U.S. are the United Kingdom ($2.7 billion), Canada($1.8 billion),
+      Germany($1.4 billion), Switzerland($1.2 billion), and Israel($763 million).
+      As with the exports, the $17 million in weapons sales to the U.S. from
+      'Unknown Suppliers' have been excluded from the map.
+    </p>
+
     <script src="bundle.js"></script>
   </body>
 </html>

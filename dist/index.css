@@ -16,7 +16,7 @@ body {
   flex-direction: column;
 }
 
-h1, h2, p, dt {
+h1, h2, dt {
   font-family: 'Lato', sans-serif;
 }
 
@@ -84,7 +84,34 @@ dd {
   align-content: center;
   align-items: center;
   justify-content: space-around;
-  width: 30%;
+  min-width: 30%;
+  max-width: 30%;
+  font-family: 'Lato', sans-serif;
+}
+
+input {
+  background-color: #A6E1FA;
+  border: none;
+  font-family: 'Lato', sans-serif;
+}
+
+input:hover {
+  background-color: #0E6BA8;
+  color: white;
+}
+
+input:active {
+  background-color: #0A2472;
+}
+
+input:focus {
+  outline:0;
+}
+
+p {
+  margin: 2% 5% 2% 5%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
 }
 
 /*Palette: Dark to Light*/
