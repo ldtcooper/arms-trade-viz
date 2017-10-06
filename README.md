@@ -53,7 +53,6 @@ There were two problems with this format. One, Datamaps does not recognize count
 ### On-Click Arcs
 
 While Datamaps made drawing arcs a breeze, drawing arcs from and to specific places on click took a little bit more work. To get that working, I had to turn to d3's event handlers. Essentially what I did was select all of the SVG units representing the countries and extract their IDs. With that, I could get at the data stored in the map by my data formatter. This handler checks whether the map is in export or import mode, and sets up the arcs to draw from or to the U.S. depending on which direction the weapons are flowing. The width of the arcs is determined by a logarithmic function that turns the somewhat exponential data into nice, linearly scaling arcs. The code for this can be found [here](https://github.com/ldtcooper/arms-trade-viz/blob/master/docs/arc_draw.md).
-)
 
 ![Import gif](https://github.com/ldtcooper/arms-trade-viz/blob/master/docs/import_gif.gif)
 
