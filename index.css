@@ -98,6 +98,7 @@ input {
   background-color: #A6E1FA;
   border: none;
   font-family: 'Lato', sans-serif;
+  margin-left: 2px;
 }
 
 input:hover {
