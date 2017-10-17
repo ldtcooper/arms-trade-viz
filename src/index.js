@@ -62,14 +62,12 @@ pathButton.addEventListener('click', () => {
   if (pathButton.value === 'See All Paths') {
     pathButton.value = 'Hide All Paths';
     const keys = Object.keys(map.options.data);
-    console.log(keys);
     let arcs = [];
     for (var i = 0; i < keys.length; i++) {
       if (keys[i] !== 'USA') {
         let origin = mode === 'Imports' ? keys[i] : 'USA';
         let destination = mode === 'Imports' ? 'USA' : keys[i];
         let strokeWidth = 2 * Math.trunc(Math.log(map.options.data[keys[i]].totalNum + 1));
-        console.log(arcs);
         arcs.push({origin, destination, strokeWidth});
       }
     }
@@ -98,6 +96,7 @@ startBar.addEventListener('change', () => {
     map = mapMaker(IMPORT_DATA, startYear, endYear);
   }
   arcDraw(mode, 'USA');
+  pathButton.value = 'See All Paths';
 });
 
 endBar.addEventListener('change', () => {
@@ -116,6 +115,7 @@ endBar.addEventListener('change', () => {
     map = mapMaker(IMPORT_DATA, startYear, endYear);
   }
   arcDraw(mode, 'USA');
+  pathButton.value = 'See All Paths';
 });
 
 // default map values: exports from 2001-2016
