@@ -13,11 +13,11 @@ export const mapMaker = function mapMaker(dataset, start, end) {
       projection: 'mercator',
       fills: {
         defaultFill: 'gainsboro',
-        target: '#454A66',
-        oneToTen: '#A6E1FA',
-        tenToHundred: '#0E6BA8',
-        hundredToThousand: '#0A2472',
-        overThousand: '#091E5E'
+        target: '#171D40',
+        oneToTen: '#bdd7e7',
+        tenToHundred: '#6baed6',
+        hundredToThousand: '#3182bd',
+        overThousand: '#08519c'
       },
       data: dataFormatter(dataset, start, end),
       geographyConfig: {
@@ -27,7 +27,7 @@ export const mapMaker = function mapMaker(dataset, start, end) {
         popupTemplate: countryPopupTemplate
       },
       arcConfig: {
-        strokeColor: 'rgba(191, 63, 63, 0.5)',
+        strokeColor: 'rgba(128, 0, 38, 0.5)',
         animationSpeed: 1000
       }
     }
