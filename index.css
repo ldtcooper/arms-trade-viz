@@ -128,8 +128,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: relative;
   bottom: 0;
+}
+
+.accessibility-text {
+  position: absolute;
+  left: -9999999px;
 }
 
 /*Palette: Dark to Light*/
