@@ -1,155 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143781214-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
 
-      gtag('config', 'UA-143781214-1');
-    </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Visualization of SIPRI data to illustrate the United States' role in the international arms trade">
-    <title>Global Arms Trade Visualization</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <script src="https://use.fontawesome.com/3338af2ff2.js"></script>
-  </head>
-  <body>
-    <header>
-      <h1>The Price of War</h1>
-      <div class="icons">
-        <a href="https://github.com/ldtcooper">
-          <i class="fa fa-github-square" ></i>
-          <span class="accessibility-text">Check me out on GitHub!</span>
-        </a>
-        <a href="https://www.linkedin.com/in/logandtcooper/">
-          <i class="fa fa-linkedin-square" ></i>
-          <span class="accessibility-text">Check me out on LinkedIn!</span>
-        </a>
-      </div>
-    </header>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8KZ038F9H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <p class='blurb'>
-      This is a map illustrating the role of the United States in the
-      global arms trade between 2001 and 2015. Darker shades of blue
-      represent higher dollar values. Mouse over a country to see how
-      much weaponry it imports from the U.S. Click it to see an arc representing the flow of arms between the U.S. and that country. Countries with no trade with the U.S. will not display arcs. Toggle between exports and imports with the left-most button. See maps of different year ranges by changing the dates. Scroll down to learn more.
-    </p>
+    gtag('config', 'G-J8KZ038F9H');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Visualization of SIPRI data to illustrate the United States' role in the international arms trade">
+  <title>Global Arms Trade Visualization</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <script src="https://use.fontawesome.com/3338af2ff2.js"></script>
+</head>
 
-    <div class="map-options">
-      <label> Click to see:
-        <input id="toggle-button" type="button" value="Imports"></input>
-      </label>
-      <label>
-        Start:
-        <select id='start'>
-          <option value="2016">2016</option>
-          <option value="2015">2015</option>
-          <option value="2014">2014</option>
-          <option value="2013">2013</option>
-          <option value="2012">2012</option>
-          <option value="2011">2011</option>
-          <option value="2010">2010</option>
-          <option value="2009">2009</option>
-          <option value="2008">2008</option>
-          <option value="2007">2007</option>
-          <option value="2006">2006</option>
-          <option value="2005">2005</option>
-          <option value="2004">2004</option>
-          <option value="2003">2003</option>
-          <option value="2002">2002</option>
-          <option value="2001" selected='selected'>2001</option>
-        </select>
-      </label>
-      <label>
-        End:
-        <select id='end'>
-          <option value="2016" selected='selected'>2016</option>
-          <option value="2015">2015</option>
-          <option value="2014">2014</option>
-          <option value="2013">2013</option>
-          <option value="2012">2012</option>
-          <option value="2011">2011</option>
-          <option value="2010">2010</option>
-          <option value="2009">2009</option>
-          <option value="2008">2008</option>
-          <option value="2007">2007</option>
-          <option value="2006">2006</option>
-          <option value="2005">2005</option>
-          <option value="2004">2004</option>
-          <option value="2003">2003</option>
-          <option value="2002">2002</option>
-          <option value="2001">2001</option>
-        </select>
-      </label>
-      <input id="path-button" type="button" value="See All Paths">
+<body>
+  <header>
+    <h1>The Price of War</h1>
+    <div class="icons">
+      <a href="https://github.com/ldtcooper">
+        <i class="fa fa-github-square"></i>
+        <span class="accessibility-text">Check me out on GitHub!</span>
+      </a>
+      <a href="https://www.linkedin.com/in/logandtcooper/">
+        <i class="fa fa-linkedin-square"></i>
+        <span class="accessibility-text">Check me out on LinkedIn!</span>
+      </a>
     </div>
+  </header>
 
-    <div id='basic-map'></div>
-    <div class="legend">
-      <h2>Legend</h2>
-      <dl>
-        <dt>
-          No Trade: <dd style="background-color:gainsboro">&nbsp;</dd>
-        </dt>
-        <dt>
-          Under Ten Million USD: <dd style="background-color:#A6E1FA">&nbsp;</dd>
-        </dt>
-        <dt>
-          Ten to One-Hundred Million USD: <dd style="background-color:#0E6BA8">&nbsp;</dd>
-        </dt>
-        <dt>
-          One-Hundred Million to One Billion USD: <dd style="background-color:#0A2472">&nbsp;</dd>
-        </dt>
-        <dt>
-          Over One Billion USD: <dd style="background-color:#091E5E">&nbsp;</dd>
-        </dt>
-      </dl>
-    </div>
-    <p>
-      The United States is the world's largest exporter of weaponry,
-      having sold $123,440,000,000 (that's 123 billion, plus some)
-      worth of arms in the past fifteen years, with $9,894,000,000
-      (almost 10 billion) of that coming in 2016 alone. This map
-      attempts to illstrate some of the scale of that trade using data
-      from the <a href="https://www.sipri.org/databases/armstransfers">
+  <p class='blurb'>
+    This is a map illustrating the role of the United States in the
+    global arms trade between 2001 and 2015. Darker shades of blue
+    represent higher dollar values. Mouse over a country to see how
+    much weaponry it imports from the U.S. Click it to see an arc representing the flow of arms between the U.S. and
+    that country. Countries with no trade with the U.S. will not display arcs. Toggle between exports and imports with
+    the left-most button. See maps of different year ranges by changing the dates. Scroll down to learn more.
+  </p>
+
+  <div class="map-options">
+    <label> Click to see:
+      <input id="toggle-button" type="button" value="Imports"></input>
+    </label>
+    <label>
+      Start:
+      <select id='start'>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+        <option value="2009">2009</option>
+        <option value="2008">2008</option>
+        <option value="2007">2007</option>
+        <option value="2006">2006</option>
+        <option value="2005">2005</option>
+        <option value="2004">2004</option>
+        <option value="2003">2003</option>
+        <option value="2002">2002</option>
+        <option value="2001" selected='selected'>2001</option>
+      </select>
+    </label>
+    <label>
+      End:
+      <select id='end'>
+        <option value="2016" selected='selected'>2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+        <option value="2009">2009</option>
+        <option value="2008">2008</option>
+        <option value="2007">2007</option>
+        <option value="2006">2006</option>
+        <option value="2005">2005</option>
+        <option value="2004">2004</option>
+        <option value="2003">2003</option>
+        <option value="2002">2002</option>
+        <option value="2001">2001</option>
+      </select>
+    </label>
+    <input id="path-button" type="button" value="See All Paths">
+  </div>
+
+  <div id='basic-map'></div>
+  <div class="legend">
+    <h2>Legend</h2>
+    <dl>
+      <dt>
+        No Trade:
+      <dd style="background-color:gainsboro">&nbsp;</dd>
+      </dt>
+      <dt>
+        Under Ten Million USD:
+      <dd style="background-color:#A6E1FA">&nbsp;</dd>
+      </dt>
+      <dt>
+        Ten to One-Hundred Million USD:
+      <dd style="background-color:#0E6BA8">&nbsp;</dd>
+      </dt>
+      <dt>
+        One-Hundred Million to One Billion USD:
+      <dd style="background-color:#0A2472">&nbsp;</dd>
+      </dt>
+      <dt>
+        Over One Billion USD:
+      <dd style="background-color:#091E5E">&nbsp;</dd>
+      </dt>
+    </dl>
+  </div>
+  <p>
+    The United States is the world's largest exporter of weaponry,
+    having sold $123,440,000,000 (that's 123 billion, plus some)
+    worth of arms in the past fifteen years, with $9,894,000,000
+    (almost 10 billion) of that coming in 2016 alone. This map
+    attempts to illstrate some of the scale of that trade using data
+    from the <a href="https://www.sipri.org/databases/armstransfers">
       Stockholm International Peace Research Institute's Arms Transfer
       Database</a>.
-    </p>
-    <p>
-      The largest importer of arms from the U.S. is South Korea
-      ($12 billion since 2001), followed by the U.A.E. ($9.3 billion),
-      Saudi Arabia ($8.3 billion), Australia ($7.6 billion), and
-      Israel ($6.4 billion). Notably missing from this map are the $460
-      million sold to international institutions (mostly to the North
-      Atlantic Treaty Organization, but also to the African Union and the
-      United Nations), as well as the sales to Singapore ($5.2 billion),
-      Bahrain ($295 million), Malta ($15 million), Mauritius ($1 million),
-      and The Seychelles ($1 million) -- all of which were excluded for
-      technical reasons. Finally, the $4 million in sales to 'Unknown
-      Recipients' have been excluded for obvious reasons.
-    </p>
-    <p>
-      While certainly not the titan in arms imports it is in exports,
-      the U.S. has bought a respectable $11.7 billion worth of arms from
-      the rest of the world since 2001. The largest exporters of weapons to
-      the U.S. are the United Kingdom ($2.7 billion), Canada($1.8 billion),
-      Germany ($1.4 billion), Switzerland ($1.2 billion), and Israel ($763 million).
-      As with the exports, the $17 million in weapons sales to the U.S. from
-      'Unknown Suppliers' have been excluded from the map.
-    </p>
+  </p>
+  <p>
+    The largest importer of arms from the U.S. is South Korea
+    ($12 billion since 2001), followed by the U.A.E. ($9.3 billion),
+    Saudi Arabia ($8.3 billion), Australia ($7.6 billion), and
+    Israel ($6.4 billion). Notably missing from this map are the $460
+    million sold to international institutions (mostly to the North
+    Atlantic Treaty Organization, but also to the African Union and the
+    United Nations), as well as the sales to Singapore ($5.2 billion),
+    Bahrain ($295 million), Malta ($15 million), Mauritius ($1 million),
+    and The Seychelles ($1 million) -- all of which were excluded for
+    technical reasons. Finally, the $4 million in sales to 'Unknown
+    Recipients' have been excluded for obvious reasons.
+  </p>
+  <p>
+    While certainly not the titan in arms imports it is in exports,
+    the U.S. has bought a respectable $11.7 billion worth of arms from
+    the rest of the world since 2001. The largest exporters of weapons to
+    the U.S. are the United Kingdom ($2.7 billion), Canada($1.8 billion),
+    Germany ($1.4 billion), Switzerland ($1.2 billion), and Israel ($763 million).
+    As with the exports, the $17 million in weapons sales to the U.S. from
+    'Unknown Suppliers' have been excluded from the map.
+  </p>
 
-    <footer>
-      <p>Created by Logan Cooper</p>
-    </footer>
-    <script src="bundle.js"></script>
-  </body>
+  <footer>
+    <p>Created by Logan Cooper</p>
+  </footer>
+  <script src="bundle.js"></script>
+</body>
+
 </html>
